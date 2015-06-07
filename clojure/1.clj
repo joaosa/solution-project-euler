@@ -5,4 +5,4 @@
         multiples (filter multiple-3-or-5? number-range)]
     (reduce + multiples)))
 
-(print (sum-multiples 1000))
+(println (sum-multiples 1000))
