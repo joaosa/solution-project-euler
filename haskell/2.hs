@@ -2,11 +2,11 @@
 fibs :: [Integer]
 fibs = 1 : 2 : zipWith (+) fibs (tail fibs)
 
-fibUnder4M :: [Integer]
-fibUnder4M = takeWhile (< 4000000) fibs
+under4M :: [Integer] -> [Integer]
+under4M = takeWhile (< 4000000)
 
-evenFib :: [Integer]
-evenFib = filter even fibUnder4M
+desiredFib :: [Integer]
+desiredFib = (filter even) . under4M $ fibs
 
 main :: IO ()
-main = do print (sum evenFib)
+main = do print (sum desiredFib)
